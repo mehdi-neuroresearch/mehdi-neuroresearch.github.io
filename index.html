@@ -101,6 +101,22 @@ text-align:center;
 padding:40px;
 margin-top:60px;
 }
+ .contact-menu{
+position:relative;
+cursor:pointer;
+}
+
+.contact-options{
+display:none;
+position:absolute;
+background:white;
+padding:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact-menu:hover .contact-options{
+display:block;
+}
 
 </style>
 
@@ -115,7 +131,22 @@ margin-top:60px;
 <a href="#">Home</a>
 <a href="#">Research</a>
 <a href="#">Books</a>
-<a href="#contact">Contact</a>
+<span class="contact-menu">
+Contact
+<div class="contact-options">
+
+<a href="mailto:mehdi.innerchange@gmail.com">Email</a>
+
+<a href="https://wa.me/905541880911" target="_blank">
+WhatsApp
+</a>
+
+<a href="https://www.linkedin.com/in/mehdi-zahmetke%C5%9F-159a5136b" target="_blank">
+LinkedIn
+</a>
+
+</div>
+</span>
 </div>
 
 </nav>

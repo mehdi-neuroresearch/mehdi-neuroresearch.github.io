@@ -109,9 +109,13 @@ cursor:pointer;
 .contact-options{
 display:none;
 position:absolute;
+top:100%;
+right:0;
 background:white;
-padding:10px;
+padding:10px 14px;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
+border-radius:6px;
+min-width:140px;
 }
 
 .contact-menu:hover .contact-options{
@@ -131,9 +135,8 @@ display:block;
 <a href="#">Home</a>
 <a href="#">Research</a>
 <a href="#">Books</a>
-<span class="contact-menu">
+<div class="contact-menu">
 <a href="#">Contact</a>
-
 <div class="contact-options">
 
 <a href="mailto:mehdi.innerchange@gmail.com">Email</a>
@@ -147,7 +150,7 @@ LinkedIn
 </a>
 
 </div>
-</span>
+</div>
 
 </nav>
 

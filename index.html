@@ -1,271 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mehdi | Researcher</title>
+<title>Mehdi Zahmatkesh</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
+html{scroll-behavior:smooth;}
+
 body{
 margin:0;
-font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-background:#F1F5F9;
-color:#111827;
+font-family:'Inter',sans-serif;
+background:#0F172A;
+color:#E5E7EB;
 }
 
-/* NAVBAR */
+/* NAV */
 
 nav{
+position:fixed;
+top:0;
+width:100%;
+background:#111827;
 display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:white;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
+justify-content:center;
+gap:30px;
+padding:18px;
+z-index:100;
 }
 
 nav a{
+color:#E5E7EB;
 text-decoration:none;
-margin-left:25px;
-color:#111827;
-font-weight:500;
+font-size:15px;
+}
+
+section{
+padding:90px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 /* HERO */
 
 .hero{
-padding:120px 8%;
-background:linear-gradient(120deg,#0B1120,#1E3A8A);
-color:white;
+text-align:center;
+padding-top:140px;
+}
+
+.logo-box{
+border:2px solid #2563EB;
+display:inline-block;
+padding:10px 16px;
+border-radius:8px;
+font-weight:600;
+margin-bottom:20px;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:10px;
+margin:10px 0;
+font-size:36px;
 }
 
-.hero p{
-font-size:20px;
-opacity:0.9;
-max-width:600px;
+.hero h3{
+font-weight:300;
+color:#9CA3AF;
 }
 
-.hero button{
-margin-top:30px;
-padding:14px 28px;
+/* BUTTON */
+
+.btn{
+background:#2563EB;
 border:none;
+padding:12px 22px;
 border-radius:8px;
-background:#22D3EE;
-color:#0B1120;
-font-size:16px;
+color:white;
 cursor:pointer;
+margin-top:20px;
 }
 
-/* SECTION */
+/* TITLES */
 
-section{
-padding:80px 8%;
-max-width:1000px;
-margin:auto;
+.title{
+font-size:28px;
+text-align:center;
+margin-bottom:30px;
 }
 
-h2{
-margin-bottom:20px;
+.title:after{
+content:"";
+display:block;
+width:60px;
+height:3px;
+background:#2563EB;
+margin:10px auto;
 }
 
 /* CARDS */
 
-.cards{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
 .card{
-background:white;
-padding:30px;
+background:#111827;
+padding:25px;
 border-radius:12px;
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:.3s;
 }
 
-/* FOOTER */
+.card:hover{
+transform:translateY(-6px);
+}
 
-footer{
-background:#0B1120;
-color:white;
+.tags{
+margin-top:12px;
+font-size:12px;
+color:#9CA3AF;
+}
+
+/* PROGRAM */
+
+.program-btn{
+display:inline-block;
+margin-top:12px;
+color:#60A5FA;
+text-decoration:none;
+}
+
+/* PROFILE ICONS */
+
+.profile-grid{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.circle{
+width:70px;
+height:70px;
+border-radius:50%;
+border:2px solid #2563EB;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+}
+
+.profile{
 text-align:center;
-padding:40px;
-margin-top:60px;
-}
- .contact-menu{
-position:relative;
-cursor:pointer;display:inline-block;
 }
 
-.contact-options{
+.profile a{
+color:white;
+text-decoration:none;
+}
+
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.contact-card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+text-align:center;
+transition:.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-6px);
+}
+
+/* QUOTE */
+
+.quote{
+text-align:center;
+font-size:20px;
+font-style:italic;
+max-width:700px;
+margin:auto;
+color:#CBD5F5;
+}
+
+/* MODAL */
+
+.modal{
 display:none;
-position:absolute;
-top:100%;
-right:0;
-background:white;
-padding:10px 14px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-border-radius:6px;
-min-width:140px;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+align-items:center;
+justify-content:center;
 }
 
-.contact-menu:hover .contact-options{
-display:block;
+.modal-content{
+background:#111827;
+padding:40px;
+max-width:700px;
+border-radius:12px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <nav>
-
-
-<div>
-<a href="#">Home</a>
-<a href="#">Research</a>
-<div class="contact-menu">
-<a href="#">Books</a>
-
-<div class="contact-options">
-
-<p>The Code of a Smoke-Free Life</p>
-
-<p>The Code of a Panic-Free Life</p>
-
-</div>
-</div>
-
-<div class="contact-menu">
-<a href="#">Contact</a>
-<div class="contact-options">
-
-<a href="mailto:mehdi.innerchange@gmail.com">Email</a>
-
-<a href="https://wa.me/905541880911" target="_blank">
-WhatsApp
-</a>
-
-<a href="https://www.linkedin.com/in/mehdi-zahmetke%C5%9F-159a5136b" target="_blank">
-LinkedIn
-</a>
-
-</div>
-</div>
-
+<a href="#projects">Projects</a>
+<a href="#books">Books</a>
+<a href="#publication">Publication</a>
+<a href="#programs">Programs</a>
+<a href="#profiles">Profiles</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<div class="hero">
+<section class="hero">
 
-<h1>Mehdi Zahmetkesh</h1>
-<p>Neuroscience Researcher</p>
+<div class="logo-box">MZ</div>
+
+<h1>Mehdi Zahmatkesh</h1>
+
+<h3>Independent Neuroscience Researcher</h3>
+
+<button class="btn" onclick="openAbout()">About Mehdi Zahmatkesh</button>
+
+</section>
+
+<!-- ABOUT MODAL -->
+
+<div class="modal" id="aboutModal">
+
+<div class="modal-content">
+
 <p>
- Independent researcher exploring the intersection of neuroscience, narrative therapy, identity transformation, and behavioral change. My work focuses on understanding how neural processes, personal narratives, and cognitive frameworks shape human behavior and psychological well-being. My research explores innovative approaches to mental health, including addiction recovery, panic attacks, stress regulation, and long-term behavioral transformation. Alongside my research, I also write books and educational materials that translate complex psychological and neuroscientific ideas into practical insights for personal growth and mental well-being.
+From an early age, I have been deeply curious about the human mind and the mechanisms behind behavior and emotion. This curiosity gradually evolved into an independent path of research exploring psychology, neuroscience, and the transformative role of narrative and identity in human experience.
 </p>
 
-<button>Explore My Work</button>
+<p>
+My personal encounters with anxiety and panic attacks also became an important turning point in my intellectual journey. They motivated me to study the psychological and neurocognitive mechanisms behind panic, emotional regulation, and behavioral change.
+</p>
+
+<p>
+Over the years, I have explored topics such as self-hypnosis, behavioral change, emotional regulation, addiction recovery, and the relationship between narrative identity and neural processes.
+</p>
 
 </div>
+
+</div>
+
+<!-- PHILOSOPHY -->
 
 <section>
 
-<h2>Research Projects</h2>
+<h2 class="title">Research Philosophy</h2>
 
-<div class="cards">
+<p style="text-align:center;max-width:800px;margin:auto;">
+My research explores how narrative identity, cognitive processes, and neural mechanisms interact to shape human behavior. I am particularly interested in how internal narratives influence emotional regulation, behavioral change, and the reconstruction of identity-related neural pathways.
+</p>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="title">Research Projects</h2>
+
+<div class="grid">
 
 <div class="card">
 <h3>NeuroHarmonia</h3>
-<p>
-A personalized neuro-audio system designed to reshape
-identity and behavioral circuits.
-</p>
+<p>A personalized neuro-audio system designed to reshape identity and behavioral circuits.</p>
+<div class="tags">Neuroscience • Behavioral Change</div>
 </div>
 
 <div class="card">
 <h3>Narrative Identity Rewiring</h3>
-<p>
-A psychological framework that rewrites internal narratives
-to transform behavior.
-</p>
+<p>A psychological framework exploring how internal narratives transform behavior.</p>
+<div class="tags">Narrative Therapy • Cognitive Psychology</div>
+</div>
+
+<div class="card">
+<h3>Narrative Therapy Research</h3>
+<p>Exploring narrative-based approaches and their interaction with neural processes.</p>
+<div class="tags">Narrative Therapy • Neuroscience</div>
+</div>
+
 </div>
 
 </section>
 
-<section>
-<h2>Academic Profiles</h2>
+<!-- BOOKS -->
 
-<div class="cards">
+<section id="books">
+
+<h2 class="title">Books</h2>
+
+<div class="grid">
 
 <div class="card">
-<h3>Google Scholar</h3>
-<p>View my academic publications and citations.</p>
+<h3>The Code of a Smoke-Free Life</h3>
+<p>A neuroscience-informed exploration of addiction and identity transformation.</p>
+<div class="tags">Neuroscience • Addiction Recovery</div>
+</div>
 
+<div class="card">
+<h3>The Code of a Panic-Free Life</h3>
+<p>A psychological guide exploring panic attacks and emotional regulation.</p>
+<div class="tags">Anxiety • Emotional Regulation</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PUBLICATION -->
+
+<section id="publication">
+
+<h2 class="title">Publication</h2>
+
+<div class="card" style="text-align:center">
+
+<h3>Neural Narrative Reprocessing (NNR)</h3>
+
+<p>A conceptual psychological framework exploring narrative-based emotional regulation and identity restructuring.</p>
+
+<a class="btn" href="https://zenodo.org/records/18938677" target="_blank">Read Publication</a>
+
+</div>
+
+</section>
+
+<!-- PROGRAMS -->
+
+<section id="programs">
+
+<h2 class="title">Programs</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Smoke-Free Transformation</h3>
+<p>Program focused on smoking cessation and identity rebuilding.</p>
+<a class="program-btn" href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+</div>
+
+<div class="card">
+<h3>Panic & Anxiety Recovery</h3>
+<p>Psychological approach for understanding and managing panic attacks.</p>
+<a class="program-btn" href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+</div>
+
+<div class="card">
+<h3>Identity Rewiring</h3>
+<p>Narrative-based framework for reshaping identity patterns.</p>
+<a class="program-btn" href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:20px;">For program requests, please contact via email.</p>
+
+</section>
+
+<!-- PROFILES -->
+
+<section id="profiles">
+
+<h2 class="title">Academic Profiles</h2>
+
+<div class="profile-grid">
+
+<div class="profile">
 <a href="https://scholar.google.com/citations?user=rddr8HoAAAAJ" target="_blank">
-<button>Visit Profile</button>
+<div class="circle">GS</div>
+Google Scholar
 </a>
 </div>
 
-<div class="card">
-<h3>ORCID</h3>
-<p>Official researcher identifier and academic record.</p>
-
+<div class="profile">
 <a href="https://orcid.org/0009-0000-1734-0237" target="_blank">
-<button>View ORCID</button>
+<div class="circle">ID</div>
+ORCID
 </a>
 </div>
 
-<div class="card">
-<h3>Zenodo</h3>
-<p>Open science repository hosting my research publication.</p>
-
+<div class="profile">
 <a href="https://zenodo.org/records/18938677" target="_blank">
-<button>View Research</button>
+<div class="circle">Z</div>
+Zenodo
 </a>
 </div>
 
 </div>
+
 </section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="title">Contact</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>Email</h3>
+<a href="mailto:mehdi.innerchange@gmail.com">Send Email</a>
+</div>
+
+<div class="contact-card">
+<h3>WhatsApp</h3>
+<a href="https://wa.me/905541880911" target="_blank">Message</a>
+</div>
+
+<div class="contact-card">
+<h3>LinkedIn</h3>
+<a href="https://www.linkedin.com/in/mehdi-zahmetke%C5%9F-159a5136b" target="_blank">Profile</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- QUOTE -->
 
 <section>
-<h2>Publications</h2>
 
-<div class="cards">
+<div class="quote">
 
-<div class="card">
-<h3>Neural Narrative Reprocessing (NNR): A Psychological Framework for Narrative-Based Emotional Regulation</h3>
-
-<p><strong>Author:</strong> Mehdi Zahmatkesh</p>
-<p><strong>Year:</strong> 2026</p>
-<p><strong>Repository:</strong> Zenodo</p>
-
-<p>
-A conceptual psychological framework exploring narrative-based emotional regulation and identity restructuring.
-</p>
-
-<a href="https://doi.org/10.5281/zenodo.18938677" target="_blank">
-<button>Read Publication</button>
-</a>
+“Human identity is not fixed. It is continuously shaped by the stories we tell ourselves and the neural pathways we reinforce.”
 
 </div>
+
 </section>
- 
-<footer>
 
-<p>© 2026 Mehdi</p>
+<script>
 
-<p>mehdi.innerchange@gmail.com</p>
-</footer>
+function openAbout(){
+document.getElementById("aboutModal").style.display="flex";
+}
+
+window.onclick=function(e){
+if(e.target.className==="modal"){
+e.target.style.display="none";
+}
+}
+
+</script>
 
 </body>
-
 </html>

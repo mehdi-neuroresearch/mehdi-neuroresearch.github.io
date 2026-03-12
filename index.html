@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mehdi Zahmatkesh | Neuroscience Researcher</title>
 
 <meta name="description" content="Independent neuroscience researcher exploring narrative identity, behavioral change, panic research, and neural mechanisms.">
-<meta name="keywords" content="Mehdi Zahmatkesh, neuroscience researcher, narrative identity, panic research, addiction neuroscience">
-
-<meta property="og:title" content="Mehdi Zahmatkesh | Neuroscience Researcher">
-<meta property="og:description" content="Research in neuroscience, narrative identity, panic and behavioral transformation.">
-<meta property="og:type" content="website">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
 html{scroll-behavior:smooth;}
-
 body{
 margin:0;
 font-family:'Inter',sans-serif;
@@ -36,11 +28,11 @@ position:fixed;
 top:0;
 width:100%;
 background:rgba(15,23,42,0.85);
-backdrop-filter:blur(8px);
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:center;
-gap:28px;
-padding:16px;
+gap:25px;
+padding:15px;
 z-index:100;
 }
 
@@ -48,10 +40,8 @@ nav a{
 color:#E5E7EB;
 text-decoration:none;
 font-size:15px;
-opacity:.8;
+opacity:.9;
 }
-
-nav a:hover{opacity:1;}
 
 /* HERO */
 
@@ -59,7 +49,6 @@ nav a:hover{opacity:1;}
 text-align:center;
 padding-top:160px;
 padding-bottom:120px;
-position:relative;
 }
 
 .logo-box{
@@ -122,70 +111,9 @@ padding:25px;
 border-radius:14px;
 border:1px solid #1F2937;
 box-shadow:0 10px 35px rgba(0,0,0,0.4);
-transition:.4s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-border-color:#2563EB;
-}
-
-.tags{
-margin-top:12px;
-font-size:12px;
-color:#9CA3AF;
-}
-
-/* PROFILES */
-
-.profile-grid{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.circle{
-width:70px;
-height:70px;
-border-radius:50%;
-border:2px solid #2563EB;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px;
-box-shadow:0 0 12px #2563EB44;
-}
-
-/* CONTACT */
-
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:22px;
-}
-
-.contact-card{
-background:#111827;
-padding:25px;
-border-radius:14px;
-text-align:center;
-border:1px solid #1F2937;
-}
-
-/* QUOTE */
-
-.quote{
-text-align:center;
-font-size:22px;
-font-style:italic;
-max-width:700px;
-margin:auto;
-color:#CBD5F5;
-padding-top:40px;
-}
-
-/* ABOUT MODAL */
+/* MODAL GLASS */
 
 .modal{
 display:none;
@@ -200,22 +128,21 @@ justify-content:center;
 }
 
 .modal-content{
-background:#111827;
+background:rgba(17,24,39,0.6);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.08);
 padding:40px;
 max-width:700px;
-border-radius:12px;
+border-radius:14px;
+position:relative;
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-nav{flex-wrap:wrap;gap:12px;}
-.hero h1{font-size:28px;}
-
-.grid{grid-template-columns:1fr;}
-.contact-grid{grid-template-columns:1fr;}
-
+.close{
+position:absolute;
+top:12px;
+right:18px;
+font-size:22px;
+cursor:pointer;
 }
 
 /* CANVAS BACKGROUND */
@@ -230,7 +157,6 @@ z-index:-1;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -238,12 +164,12 @@ z-index:-1;
 <canvas id="network"></canvas>
 
 <nav>
-<a href="#projects">Projects</a>
-<a href="#books">Books</a>
-<a href="#publication">Publication</a>
-<a href="#programs">Programs</a>
-<a href="#profiles">Profiles</a>
-<a href="#contact">Contact</a>
+<a href="#projects" data-key="projects"></a>
+<a href="#books" data-key="books"></a>
+<a href="#publication" data-key="publication"></a>
+<a href="#programs" data-key="programs"></a>
+<a href="#profiles" data-key="profiles"></a>
+<a href="#contact" data-key="contact"></a>
 </nav>
 
 <section class="hero">
@@ -252,58 +178,36 @@ z-index:-1;
 
 <h1>Mehdi Zahmatkesh</h1>
 
-<h3>Independent Neuroscience Researcher</h3>
+<h3 data-key="title"></h3>
 
-<button class="btn" onclick="openAbout()">About Mehdi Zahmatkesh</button>
+<button class="btn" onclick="openAbout()" data-key="about"></button>
 
 </section>
 
 <div class="modal" id="aboutModal">
-
 <div class="modal-content">
 
-<p>From an early age I have been deeply curious about the human mind and the mechanisms behind behavior and emotion.</p>
+<span class="close" onclick="closeAbout()">×</span>
 
-<p>My encounters with anxiety and panic attacks motivated me to study emotional regulation and neural mechanisms behind behavioral change.</p>
-
-<p>My research focuses on narrative identity, addiction recovery and identity-related neural pathways.</p>
+<p data-key="aboutText"></p>
 
 </div>
-
 </div>
-
-<section>
-
-<h2 class="title">Research Philosophy</h2>
-
-<p style="text-align:center;max-width:800px;margin:auto;">
-My research explores how narrative identity, cognitive processes and neural mechanisms interact to shape human behavior and reconstruct identity-related neural pathways.
-</p>
-
-</section>
 
 <section id="projects">
 
-<h2 class="title">Research Projects</h2>
+<h2 class="title" data-key="projects"></h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>NeuroHarmonia</h3>
-<p>A personalized neuro-audio system designed to reshape identity and behavioral circuits.</p>
-<div class="tags">Neuroscience • Behavioral Change</div>
+<p data-key="project1"></p>
 </div>
 
 <div class="card">
 <h3>Narrative Identity Rewiring</h3>
-<p>A psychological framework exploring how internal narratives transform behavior.</p>
-<div class="tags">Narrative Therapy • Cognitive Psychology</div>
-</div>
-
-<div class="card">
-<h3>Narrative Therapy Research</h3>
-<p>Exploring narrative-based approaches and their interaction with neural processes.</p>
-<div class="tags">Narrative Therapy • Neuroscience</div>
+<p data-key="project2"></p>
 </div>
 
 </div>
@@ -312,120 +216,19 @@ My research explores how narrative identity, cognitive processes and neural mech
 
 <section id="books">
 
-<h2 class="title">Books</h2>
+<h2 class="title" data-key="books"></h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>The Code of a Smoke-Free Life</h3>
-<p>A neuroscience-informed exploration of addiction and identity transformation.</p>
+<p data-key="book1"></p>
 </div>
 
 <div class="card">
 <h3>The Code of a Panic-Free Life</h3>
-<p>A psychological guide exploring panic attacks and emotional regulation.</p>
+<p data-key="book2"></p>
 </div>
-
-</div>
-
-</section>
-
-<section id="publication">
-
-<h2 class="title">Publication</h2>
-
-<div class="card" style="text-align:center">
-
-<h3>Neural Narrative Reprocessing (NNR)</h3>
-
-<p>A conceptual psychological framework exploring narrative-based emotional regulation and identity restructuring.</p>
-
-<a class="btn" href="https://zenodo.org/records/18938677" target="_blank">Read Publication</a>
-
-</div>
-
-</section>
-
-<section id="programs">
-
-<h2 class="title">Programs</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Smoke-Free Transformation</h3>
-<p>Program focused on smoking cessation and identity rebuilding.</p>
-<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
-</div>
-
-<div class="card">
-<h3>Panic & Anxiety Recovery</h3>
-<p>Psychological approach for understanding and managing panic attacks.</p>
-<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
-</div>
-
-<div class="card">
-<h3>Identity Rewiring</h3>
-<p>Narrative-based framework for reshaping identity patterns.</p>
-<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
-</div>
-
-</div>
-
-</section>
-
-<section id="profiles">
-
-<h2 class="title">Academic Profiles</h2>
-
-<div class="profile-grid">
-
-<a href="https://scholar.google.com/citations?user=rddr8HoAAAAJ" target="_blank">
-<div class="circle">GS</div>
-</a>
-
-<a href="https://orcid.org/0009-0000-1734-0237" target="_blank">
-<div class="circle">ID</div>
-</a>
-
-<a href="https://zenodo.org/records/18938677" target="_blank">
-<div class="circle">Z</div>
-</a>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2 class="title">Contact</h2>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-<h3>Email</h3>
-<a href="mailto:mehdi.innerchange@gmail.com">Send Email</a>
-</div>
-
-<div class="contact-card">
-<h3>WhatsApp</h3>
-<a href="https://wa.me/905541880911" target="_blank">Message</a>
-</div>
-
-<div class="contact-card">
-<h3>LinkedIn</h3>
-<a href="https://www.linkedin.com/in/mehdi-zahmetke%C5%9F-159a5136b" target="_blank">Profile</a>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="quote">
-
-“Human identity is not fixed. It is continuously shaped by the stories we tell ourselves and the neural pathways we reinforce.”
 
 </div>
 
@@ -433,19 +236,103 @@ My research explores how narrative identity, cognitive processes and neural mech
 
 <script>
 
-/* ABOUT MODAL */
+/* LANGUAGE DATA */
+
+const text = {
+
+en:{
+title:"Independent Neuroscience Researcher",
+about:"About Mehdi Zahmatkesh",
+aboutText:"From an early age I have been deeply curious about the human mind and the mechanisms behind behavior and emotion.",
+projects:"Research Projects",
+books:"Books",
+publication:"Publication",
+programs:"Programs",
+profiles:"Profiles",
+contact:"Contact",
+project1:"A personalized neuro-audio system designed to reshape identity and behavioral circuits.",
+project2:"A psychological framework exploring how internal narratives transform behavior.",
+book1:"A neuroscience-informed exploration of addiction and identity transformation.",
+book2:"A psychological guide exploring panic attacks and emotional regulation."
+},
+
+fa:{
+title:"پژوهشگر مستقل علوم اعصاب",
+about:"درباره مهدی زحمتکش",
+aboutText:"از سنین پایین کنجکاوی عمیقی نسبت به ذهن انسان و سازوکارهای رفتار و هیجان داشتم.",
+projects:"پروژه‌های تحقیقاتی",
+books:"کتاب‌ها",
+publication:"مقاله",
+programs:"برنامه‌ها",
+profiles:"پروفایل‌های علمی",
+contact:"تماس",
+project1:"سیستم نورواودیویی برای بازسازی مدارهای هویتی و رفتاری.",
+project2:"چارچوب روان‌شناختی برای تغییر رفتار از طریق روایت ذهنی.",
+book1:"کتابی درباره ترک سیگار و بازسازی هویت.",
+book2:"راهنمای روان‌شناختی برای درک و مدیریت پانیک."
+},
+
+tr:{
+title:"Bağımsız Nörobilim Araştırmacısı",
+about:"Mehdi Zahmatkeş Hakkında",
+aboutText:"Küçük yaşlardan itibaren insan zihni ve davranış mekanizmalarına büyük ilgi duydum.",
+projects:"Araştırma Projeleri",
+books:"Kitaplar",
+publication:"Yayın",
+programs:"Programlar",
+profiles:"Akademik Profiller",
+contact:"İletişim",
+project1:"Kimlik ve davranış devrelerini yeniden şekillendiren nöro-ses sistemi.",
+project2:"İç anlatıların davranışı nasıl değiştirdiğini inceleyen psikolojik çerçeve.",
+book1:"Sigara bağımlılığı ve kimlik dönüşümü üzerine kitap.",
+book2:"Panik atak ve duygusal düzenleme rehberi."
+},
+
+ar:{
+title:"باحث مستقل في علم الأعصاب",
+about:"حول مهدي زحمتكش",
+aboutText:"منذ الصغر كان لدي فضول عميق حول العقل البشري وآليات السلوك والمشاعر.",
+projects:"المشاريع البحثية",
+books:"الكتب",
+publication:"منشور علمي",
+programs:"البرامج",
+profiles:"الملفات الأكاديمية",
+contact:"التواصل",
+project1:"نظام صوتي عصبي لإعادة تشكيل دوائر الهوية والسلوك.",
+project2:"إطار نفسي لدراسة تأثير السرد الداخلي على السلوك.",
+book1:"كتاب حول الإقلاع عن التدخين وتحول الهوية.",
+book2:"دليل نفسي لفهم نوبات الهلع."
+}
+
+};
+
+/* LANGUAGE DETECTION */
+
+let lang = new URLSearchParams(location.search).get("lang") || navigator.language.slice(0,2);
+
+if(!text[lang]) lang="en";
+
+document.querySelectorAll("[data-key]").forEach(el=>{
+el.innerText=text[lang][el.dataset.key];
+});
+
+/* RTL */
+
+if(lang==="fa" || lang==="ar"){
+document.body.dir="rtl";
+}
+
+/* ABOUT */
 
 function openAbout(){
 document.getElementById("aboutModal").style.display="flex";
 }
 
-window.onclick=function(e){
-if(e.target.className==="modal"){
-e.target.style.display="none";
-}
+function closeAbout(){
+document.getElementById("aboutModal").style.display="none";
 }
 
-/* NETWORK BACKGROUND */
+/* NETWORK */
 
 const canvas=document.getElementById("network");
 const ctx=canvas.getContext("2d");
@@ -480,27 +367,6 @@ ctx.arc(p.x,p.y,2,0,Math.PI*2);
 ctx.fillStyle="#2563EB";
 ctx.fill();
 });
-
-for(let i=0;i<particles.length;i++){
-for(let j=i;j<particles.length;j++){
-
-let dx=particles[i].x-particles[j].x;
-let dy=particles[i].y-particles[j].y;
-let dist=Math.sqrt(dx*dx+dy*dy);
-
-if(dist<120){
-
-ctx.beginPath();
-ctx.moveTo(particles[i].x,particles[i].y);
-ctx.lineTo(particles[j].x,particles[j].y);
-ctx.strokeStyle="#2563EB22";
-ctx.stroke();
-
-}
-
-}
-
-}
 
 requestAnimationFrame(animate);
 

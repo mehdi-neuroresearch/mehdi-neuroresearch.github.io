@@ -261,7 +261,83 @@ width:100%;
 height:100%;
 z-index:-1;
 }
+#neuralButton{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#2563EB;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+font-size:14px;
+cursor:pointer;
+box-shadow:0 0 10px rgba(37,99,235,0.6);
+z-index:999;
+}
+ #neuralModal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.55);
+z-index:2000;
+}
 
+#neuralBox{
+width:min(520px,90%);
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:18px;
+padding:26px;
+color:#E5E7EB;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+#neuralHeader{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:18px;
+font-size:18px;
+font-weight:600;
+}
+
+#closeNeural{
+cursor:pointer;
+font-size:20px;
+opacity:.7;
+}
+
+.neuralMenu{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:18px;
+}
+
+.neuralItem{
+background:#1E293B;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
+text-align:center;
+font-size:14px;
+}
+
+.neuralItem:hover{
+background:#2563EB;
+}
+
+#neuralContent{
+font-size:14px;
+line-height:1.6;
+opacity:.9;
+}
 </style>
 
 </head>
@@ -548,6 +624,74 @@ requestAnimationFrame(animate);
 animate();
 
 </script>
+<div id="neuralButton">🧠 Neural Reset</div>
+<div id="neuralModal">
 
+<div id="neuralBox">
+
+<div id="neuralHeader">
+<span>Neural Reset</span>
+<span id="closeNeural">✕</span>
+</div>
+
+<div class="neuralMenu">
+
+<div class="neuralItem" onclick="showNeural('panic')">Panic</div>
+
+<div class="neuralItem" onclick="showNeural('cigarette')">Cigarette</div>
+
+<div class="neuralItem" onclick="showNeural('stress')">Stress</div>
+
+<div class="neuralItem" onclick="showNeural('calm')">Calm</div>
+
+</div>
+
+<div id="neuralContent">
+Choose a mode
+</div>
+
+</div>
+
+</div>
+ <script>
+
+const button = document.getElementById("neuralButton");
+const modal = document.getElementById("neuralModal");
+const closeBtn = document.getElementById("closeNeural");
+const content = document.getElementById("neuralContent");
+
+button.onclick = () => {
+modal.style.display = "flex";
+};
+
+closeBtn.onclick = () => {
+modal.style.display = "none";
+};
+
+function showNeural(mode){
+
+if(mode === "panic"){
+content.innerHTML =
+"<b>You are not in danger.</b><br><br>Your brain has triggered a false alarm.<br><br>Breathing exercise:<br>Inhale 4 sec<br>Hold 2 sec<br>Exhale 6 sec.";
+}
+
+if(mode === "cigarette"){
+content.innerHTML =
+"Your brain is trying to follow an old habit loop.<br><br>Do not act on the urge.<br><br>Every minute you delay weakens the old pathway.";
+}
+
+if(mode === "stress"){
+content.innerHTML =
+"Relax your shoulders.<br><br>Slow your breathing.<br><br>Name five things you see around you.";
+}
+
+if(mode === "calm"){
+content.innerHTML =
+"Close your eyes for a moment.<br><br>Focus on slow breathing and let your nervous system settle.";
+}
+
+}
+
+</script>
 </body>
 </html>

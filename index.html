@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mehdi Zahmatkesh | Neuroscience Researcher</title>
+
+<meta name="description" content="Independent neuroscience researcher exploring narrative identity, addiction recovery, emotional regulation and behavioral change.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+margin:0;
+font-family:'Inter',sans-serif;
+background:linear-gradient(180deg,#07142a,#0c2345);
+color:white;
+
+}
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+background:rgba(5,10,25,0.85);
+backdrop-filter:blur(10px);
+padding:18px;
+display:flex;
+justify-content:center;
+gap:30px;
+z-index:1000;
+
+}
+
+nav a{
+
+color:#c7d4ff;
+text-decoration:none;
+font-size:15px;
+
+}
+
+nav a:hover{
+
+color:white;
+
+}
+
+.hero{
+
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+
+}
+
+.logo{
+
+border:2px solid #3b82f6;
+border-radius:10px;
+padding:10px 16px;
+margin-bottom:20px;
+font-weight:600;
+
+}
+
+.hero h1{
+
+font-size:42px;
+margin:10px 0;
+
+}
+
+.hero h2{
+
+font-weight:300;
+color:#9fb4ff;
+
+}
+
+.button{
+
+margin-top:30px;
+background:#2563eb;
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+display:inline-block;
+
+}
+
+.section{
+
+padding:100px 20px;
+max-width:1000px;
+margin:auto;
+
+}
+
+.section h2{
+
+text-align:center;
+font-size:34px;
+margin-bottom:40px;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:16px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+
+}
+
+.card h3{
+
+margin-top:0;
+
+}
+
+.card button{
+
+margin-top:15px;
+padding:10px 16px;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+
+}
+
+.aboutBox{
+
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#0c2345;
+padding:40px;
+max-width:600px;
+border-radius:20px;
+display:none;
+z-index:2000;
+
+}
+
+.closeBtn{
+
+position:absolute;
+top:10px;
+right:14px;
+font-size:22px;
+cursor:pointer;
+
+}
+
+footer{
+
+text-align:center;
+padding:40px;
+color:#9fb4ff;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<a href="#projects">Projects</a>
+<a href="#books">Books</a>
+<a href="#publication">Publication</a>
+<a href="#programs">Programs</a>
+<a href="#profiles">Profiles</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section class="hero">
+
+<div class="logo">MZ</div>
+
+<h1>Mehdi Zahmatkesh</h1>
+
+<h2>Independent Neuroscience Researcher</h2>
+
+<a class="button" onclick="openAbout()">About Mehdi Zahmatkesh</a>
+
+</section>
+
+<div class="aboutBox" id="aboutBox">
+
+<div class="closeBtn" onclick="closeAbout()">×</div>
+
+<p>
+
+From an early age I have been deeply curious about the human mind and the mechanisms behind behavior and emotion.
+
+<br><br>
+
+My encounters with anxiety and panic attacks motivated me to study emotional regulation and neural mechanisms behind behavioral change.
+
+<br><br>
+
+My research focuses on narrative identity, addiction recovery and identity-related neural pathways.
+
+</p>
+
+</div>
+
+<section class="section" id="philosophy">
+
+<h2>Research Philosophy</h2>
+
+<p style="text-align:center">
+
+My research explores how narrative identity, cognitive processes and neural mechanisms interact to shape human behavior and identity related neural rewiring.
+
+</p>
+
+</section>
+<section class="section" id="projects">
+
+<h2>Research Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>NeuroHarmonia</h3>
+<p>
+A personalized neuro-audio system designed to reshape identity and behavioral circuits.
+</p>
+</div>
+
+<div class="card">
+<h3>Narrative Identity Rewiring</h3>
+<p>
+A psychological framework exploring how identity narratives reshape neural pathways and behavior.
+</p>
+</div>
+
+<div class="card">
+<h3>Narrative Therapy Research</h3>
+<p>
+Exploring the relationship between storytelling, identity reconstruction and emotional regulation.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="books">
+
+<h2>Books</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>The Code of a Smoke-Free Life</h3>
+
+<p>
+A neuroscience-informed exploration of addiction recovery and identity transformation.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>The Code of a Panic-Free Life</h3>
+
+<p>
+A psychological guide explaining panic attacks and practical methods for calming the mind.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="publication">
+
+<h2>Publication</h2>
+
+<div class="card">
+
+<h3>Neural Narrative Reprocessing (NNR)</h3>
+
+<p>
+
+Author: Mehdi Zahmatkesh
+
+<br><br>
+
+Year: 2026
+
+<br><br>
+
+A conceptual psychological framework exploring narrative-based emotional regulation and identity restructuring.
+
+</p>
+
+<button onclick="window.open('https://zenodo.org','_blank')">
+
+Read Publication
+
+</button>
+
+</div>
+
+</section>
+
+
+<section class="section" id="programs">
+
+<h2>Programs</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Quit Smoking Program</h3>
+
+<p>
+
+Personal guidance for addiction recovery and identity transformation.
+
+</p>
+
+<button onclick="window.location.href='mailto:mehdi.innerchange@gmail.com'">
+
+Request Program
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Panic Recovery Program</h3>
+
+<p>
+
+Helping individuals understand panic attacks and regain control of emotional regulation.
+
+</p>
+
+<button onclick="window.location.href='mailto:mehdi.innerchange@gmail.com'">
+
+Request Program
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Identity Transformation Program</h3>
+
+<p>
+
+A narrative-based approach for long-term behavioral change and self reconstruction.
+
+</p>
+
+<button onclick="window.location.href='mailto:mehdi.innerchange@gmail.com'">
+
+Request Program
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="profiles">
+
+<h2>Academic Profiles</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Google Scholar</h3>
+
+<p>
+
+View my academic publications and citations.
+
+</p>
+
+<button onclick="window.open('https://scholar.google.com','_blank')">
+
+Visit Profile
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>ORCID</h3>
+
+<p>
+
+Official researcher identifier and academic record.
+
+</p>
+
+<button onclick="window.open('https://orcid.org','_blank')">
+
+View ORCID
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Zenodo</h3>
+
+<p>
+
+Open science repository hosting my research publications.
+
+</p>
+
+<button onclick="window.open('https://zenodo.org','_blank')">
+
+View Research
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="contact">
+
+<h2>Contact</h2>
+
+<p style="text-align:center">
+
+For collaboration, research discussion, or program requests you can contact me directly.
+
+<br><br>
+
+<a href="mailto:mehdi.innerchange@gmail.com" style="color:#60a5fa">
+
+mehdi.innerchange@gmail.com
+
+</a>
+
+</p>
+
+</section>
+
+
+<footer>
+
+© 2026 Mehdi Zahmatkesh
+
+<br><br>
+
+mehdiresearch.com
+
+</footer>
+
+
+<script>
+
+function openAbout(){
+
+document.getElementById("aboutBox").style.display="block";
+
+}
+
+function closeAbout(){
+
+document.getElementById("aboutBox").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>

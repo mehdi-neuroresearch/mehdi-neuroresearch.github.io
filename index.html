@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mehdi Zahmatkesh</title>
+<title>Mehdi Zahmatkesh | Neuroscience Researcher</title>
+
+<meta name="description" content="Independent neuroscience researcher exploring narrative identity, behavioral change, panic research, and neural mechanisms.">
+<meta name="keywords" content="Mehdi Zahmatkesh, neuroscience researcher, narrative identity, panic research, addiction neuroscience">
+
+<meta property="og:title" content="Mehdi Zahmatkesh | Neuroscience Researcher">
+<meta property="og:description" content="Research in neuroscience, narrative identity, panic and behavioral transformation.">
+<meta property="og:type" content="website">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -17,6 +26,7 @@ margin:0;
 font-family:'Inter',sans-serif;
 background:#0F172A;
 color:#E5E7EB;
+overflow-x:hidden;
 }
 
 /* NAV */
@@ -25,11 +35,12 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-background:#111827;
+background:rgba(15,23,42,0.85);
+backdrop-filter:blur(8px);
 display:flex;
 justify-content:center;
-gap:30px;
-padding:18px;
+gap:28px;
+padding:16px;
 z-index:100;
 }
 
@@ -37,53 +48,50 @@ nav a{
 color:#E5E7EB;
 text-decoration:none;
 font-size:15px;
+opacity:.8;
 }
+
+nav a:hover{opacity:1;}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding-top:160px;
+padding-bottom:120px;
+position:relative;
+}
+
+.logo-box{
+border:2px solid #2563EB;
+display:inline-block;
+padding:12px 18px;
+border-radius:10px;
+font-weight:600;
+margin-bottom:25px;
+box-shadow:0 0 20px #2563EB55;
+}
+
+.hero h1{font-size:38px;margin:10px 0;}
+.hero h3{font-weight:300;color:#9CA3AF;}
+
+.btn{
+background:#2563EB;
+border:none;
+padding:13px 25px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* SECTIONS */
 
 section{
 padding:90px 20px;
 max-width:1100px;
 margin:auto;
 }
-
-/* HERO */
-
-.hero{
-text-align:center;
-padding-top:140px;
-}
-
-.logo-box{
-border:2px solid #2563EB;
-display:inline-block;
-padding:10px 16px;
-border-radius:8px;
-font-weight:600;
-margin-bottom:20px;
-}
-
-.hero h1{
-margin:10px 0;
-font-size:36px;
-}
-
-.hero h3{
-font-weight:300;
-color:#9CA3AF;
-}
-
-/* BUTTON */
-
-.btn{
-background:#2563EB;
-border:none;
-padding:12px 22px;
-border-radius:8px;
-color:white;
-cursor:pointer;
-margin-top:20px;
-}
-
-/* TITLES */
 
 .title{
 font-size:28px;
@@ -94,30 +102,32 @@ margin-bottom:30px;
 .title:after{
 content:"";
 display:block;
-width:60px;
+width:70px;
 height:3px;
 background:#2563EB;
-margin:10px auto;
+margin:12px auto;
 }
 
-/* CARDS */
+/* GRID */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+gap:28px;
 }
 
 .card{
 background:#111827;
 padding:25px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-transition:.3s;
+border-radius:14px;
+border:1px solid #1F2937;
+box-shadow:0 10px 35px rgba(0,0,0,0.4);
+transition:.4s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
+border-color:#2563EB;
 }
 
 .tags{
@@ -126,16 +136,7 @@ font-size:12px;
 color:#9CA3AF;
 }
 
-/* PROGRAM */
-
-.program-btn{
-display:inline-block;
-margin-top:12px;
-color:#60A5FA;
-text-decoration:none;
-}
-
-/* PROFILE ICONS */
+/* PROFILES */
 
 .profile-grid{
 display:flex;
@@ -153,15 +154,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:20px;
-}
-
-.profile{
-text-align:center;
-}
-
-.profile a{
-color:white;
-text-decoration:none;
+box-shadow:0 0 12px #2563EB44;
 }
 
 /* CONTACT */
@@ -169,33 +162,30 @@ text-decoration:none;
 .contact-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+gap:22px;
 }
 
 .contact-card{
 background:#111827;
 padding:25px;
-border-radius:12px;
+border-radius:14px;
 text-align:center;
-transition:.3s;
-}
-
-.contact-card:hover{
-transform:translateY(-6px);
+border:1px solid #1F2937;
 }
 
 /* QUOTE */
 
 .quote{
 text-align:center;
-font-size:20px;
+font-size:22px;
 font-style:italic;
 max-width:700px;
 margin:auto;
 color:#CBD5F5;
+padding-top:40px;
 }
 
-/* MODAL */
+/* ABOUT MODAL */
 
 .modal{
 display:none;
@@ -216,10 +206,36 @@ max-width:700px;
 border-radius:12px;
 }
 
+/* MOBILE */
+
+@media (max-width:768px){
+
+nav{flex-wrap:wrap;gap:12px;}
+.hero h1{font-size:28px;}
+
+.grid{grid-template-columns:1fr;}
+.contact-grid{grid-template-columns:1fr;}
+
+}
+
+/* CANVAS BACKGROUND */
+
+#network{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
 </style>
+
 </head>
 
 <body>
+
+<canvas id="network"></canvas>
 
 <nav>
 <a href="#projects">Projects</a>
@@ -242,41 +258,29 @@ border-radius:12px;
 
 </section>
 
-<!-- ABOUT MODAL -->
-
 <div class="modal" id="aboutModal">
 
 <div class="modal-content">
 
-<p>
-From an early age, I have been deeply curious about the human mind and the mechanisms behind behavior and emotion. This curiosity gradually evolved into an independent path of research exploring psychology, neuroscience, and the transformative role of narrative and identity in human experience.
-</p>
+<p>From an early age I have been deeply curious about the human mind and the mechanisms behind behavior and emotion.</p>
 
-<p>
-My personal encounters with anxiety and panic attacks also became an important turning point in my intellectual journey. They motivated me to study the psychological and neurocognitive mechanisms behind panic, emotional regulation, and behavioral change.
-</p>
+<p>My encounters with anxiety and panic attacks motivated me to study emotional regulation and neural mechanisms behind behavioral change.</p>
 
-<p>
-Over the years, I have explored topics such as self-hypnosis, behavioral change, emotional regulation, addiction recovery, and the relationship between narrative identity and neural processes.
-</p>
+<p>My research focuses on narrative identity, addiction recovery and identity-related neural pathways.</p>
 
 </div>
 
 </div>
-
-<!-- PHILOSOPHY -->
 
 <section>
 
 <h2 class="title">Research Philosophy</h2>
 
 <p style="text-align:center;max-width:800px;margin:auto;">
-My research explores how narrative identity, cognitive processes, and neural mechanisms interact to shape human behavior. I am particularly interested in how internal narratives influence emotional regulation, behavioral change, and the reconstruction of identity-related neural pathways.
+My research explores how narrative identity, cognitive processes and neural mechanisms interact to shape human behavior and reconstruct identity-related neural pathways.
 </p>
 
 </section>
-
-<!-- PROJECTS -->
 
 <section id="projects">
 
@@ -306,8 +310,6 @@ My research explores how narrative identity, cognitive processes, and neural mec
 
 </section>
 
-<!-- BOOKS -->
-
 <section id="books">
 
 <h2 class="title">Books</h2>
@@ -317,20 +319,16 @@ My research explores how narrative identity, cognitive processes, and neural mec
 <div class="card">
 <h3>The Code of a Smoke-Free Life</h3>
 <p>A neuroscience-informed exploration of addiction and identity transformation.</p>
-<div class="tags">Neuroscience • Addiction Recovery</div>
 </div>
 
 <div class="card">
 <h3>The Code of a Panic-Free Life</h3>
 <p>A psychological guide exploring panic attacks and emotional regulation.</p>
-<div class="tags">Anxiety • Emotional Regulation</div>
 </div>
 
 </div>
 
 </section>
-
-<!-- PUBLICATION -->
 
 <section id="publication">
 
@@ -348,8 +346,6 @@ My research explores how narrative identity, cognitive processes, and neural mec
 
 </section>
 
-<!-- PROGRAMS -->
-
 <section id="programs">
 
 <h2 class="title">Programs</h2>
@@ -359,28 +355,24 @@ My research explores how narrative identity, cognitive processes, and neural mec
 <div class="card">
 <h3>Smoke-Free Transformation</h3>
 <p>Program focused on smoking cessation and identity rebuilding.</p>
-<a class="program-btn" href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
 </div>
 
 <div class="card">
 <h3>Panic & Anxiety Recovery</h3>
 <p>Psychological approach for understanding and managing panic attacks.</p>
-<a class="program-btn" href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
 </div>
 
 <div class="card">
 <h3>Identity Rewiring</h3>
 <p>Narrative-based framework for reshaping identity patterns.</p>
-<a class="program-btn" href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
 </div>
 
 </div>
-
-<p style="text-align:center;margin-top:20px;">For program requests, please contact via email.</p>
 
 </section>
-
-<!-- PROFILES -->
 
 <section id="profiles">
 
@@ -388,32 +380,21 @@ My research explores how narrative identity, cognitive processes, and neural mec
 
 <div class="profile-grid">
 
-<div class="profile">
 <a href="https://scholar.google.com/citations?user=rddr8HoAAAAJ" target="_blank">
 <div class="circle">GS</div>
-Google Scholar
 </a>
-</div>
 
-<div class="profile">
 <a href="https://orcid.org/0009-0000-1734-0237" target="_blank">
 <div class="circle">ID</div>
-ORCID
 </a>
-</div>
 
-<div class="profile">
 <a href="https://zenodo.org/records/18938677" target="_blank">
 <div class="circle">Z</div>
-Zenodo
 </a>
-</div>
 
 </div>
 
 </section>
-
-<!-- CONTACT -->
 
 <section id="contact">
 
@@ -440,8 +421,6 @@ Zenodo
 
 </section>
 
-<!-- QUOTE -->
-
 <section>
 
 <div class="quote">
@@ -454,6 +433,8 @@ Zenodo
 
 <script>
 
+/* ABOUT MODAL */
+
 function openAbout(){
 document.getElementById("aboutModal").style.display="flex";
 }
@@ -463,6 +444,69 @@ if(e.target.className==="modal"){
 e.target.style.display="none";
 }
 }
+
+/* NETWORK BACKGROUND */
+
+const canvas=document.getElementById("network");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<70;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:Math.random()*0.5,
+vy:Math.random()*0.5
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+p.x+=p.vx;
+p.y+=p.vy;
+
+if(p.x>canvas.width||p.x<0)p.vx*=-1;
+if(p.y>canvas.height||p.y<0)p.vy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="#2563EB";
+ctx.fill();
+});
+
+for(let i=0;i<particles.length;i++){
+for(let j=i;j<particles.length;j++){
+
+let dx=particles[i].x-particles[j].x;
+let dy=particles[i].y-particles[j].y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+
+ctx.beginPath();
+ctx.moveTo(particles[i].x,particles[i].y);
+ctx.lineTo(particles[j].x,particles[j].y);
+ctx.strokeStyle="#2563EB22";
+ctx.stroke();
+
+}
+
+}
+
+}
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
 
 </script>
 

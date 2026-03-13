@@ -813,5 +813,71 @@ content.innerHTML =
 }
 
 </script>
+ <div id="langButton">🌐 Language</div>
+
+<div id="langMenu">
+<a href="index.html">🇬🇧 English</a>
+<a href="tr.html">🇹🇷 Türkçe</a>
+</div>
+
+<style>
+
+#langButton{
+position:fixed;
+bottom:25px;
+left:25px;
+background:#2563EB;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+font-size:14px;
+cursor:pointer;
+z-index:9999;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+#langMenu{
+position:fixed;
+bottom:80px;
+left:25px;
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(12px);
+padding:15px;
+border-radius:14px;
+display:none;
+flex-direction:column;
+gap:8px;
+z-index:9999;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+#langMenu a{
+color:#E5E7EB;
+text-decoration:none;
+font-size:14px;
+}
+
+#langMenu a:hover{
+color:#2563EB;
+}
+
+</style>
+
+<script>
+
+const langButton = document.getElementById("langButton");
+const langMenu = document.getElementById("langMenu");
+
+langButton.onclick = () => {
+
+if(langMenu.style.display === "flex"){
+langMenu.style.display = "none";
+}else{
+langMenu.style.display = "flex";
+}
+
+};
+
+</script>
 </body>
 </html>

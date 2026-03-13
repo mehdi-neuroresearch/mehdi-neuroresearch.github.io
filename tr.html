@@ -1,1 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Mehdi Zahmatkesh | Neuroscience Researcher</title>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Mehdi Zahmatkesh",
+ "url": "https://mehdiresearch.com",
+ "jobTitle": "Independent Neuroscience Researcher",
+ "sameAs": [
+   "https://scholar.google.com/citations?user=rddr8HoAAAAJ",
+   "https://orcid.org/0009-0000-1734-0237",
+   "https://www.linkedin.com/in/mehdi-zahmetke%C5%9F-159a5136b",
+   "https://zenodo.org/records/18938677"
+ ]
+}
+</script>
+
+<meta name="description" content="Neuroscience research by Mahdi Zahmatkesh exploring panic attacks, smoking addiction, stress regulation, neural pathways and brain behavior mechanisms.">
+<meta name="keywords" content="Mehdi Zahmatkesh, neuroscience researcher, narrative identity, panic research, addiction neuroscience">
+
+<meta property="og:title" content="Mehdi Zahmatkesh | Neuroscience Researcher">
+<meta property="og:description" content="Research in neuroscience, narrative identity, panic and behavioral transformation.">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#0F172A;
+color:#E5E7EB;
+overflow-x:hidden;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(15,23,42,0.8);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:center;
+gap:26px;
+padding:16px;
+z-index:100;
+}
+
+nav a{
+color:#E5E7EB;
+text-decoration:none;
+font-size:15px;
+opacity:.85;
+}
+
+nav a:hover{opacity:1;}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding-top:160px;
+padding-bottom:120px;
+}
+
+.logo-box{
+border:2px solid #2563EB;
+display:inline-block;
+padding:12px 18px;
+border-radius:10px;
+font-weight:600;
+margin-bottom:25px;
+box-shadow:0 0 20px #2563EB55;
+}
+
+.hero h1{font-size:38px;margin:10px 0;}
+.hero h3{font-weight:300;color:#9CA3AF;}
+
+.btn{
+background:#2563EB;
+border:none;
+padding:13px 25px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* SECTIONS */
+
+section{
+padding:90px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.title{
+font-size:28px;
+text-align:center;
+margin-bottom:30px;
+}
+
+.title:after{
+content:"";
+display:block;
+width:70px;
+height:3px;
+background:#2563EB;
+margin:12px auto;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:14px;
+border:1px solid #1F2937;
+box-shadow:0 10px 35px rgba(0,0,0,0.4);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#2563EB;
+}
+
+.tags{
+margin-top:12px;
+font-size:12px;
+color:#9CA3AF;
+}
+
+/* PROFILES */
+
+.profile-grid{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.circle{
+width:70px;
+height:70px;
+border-radius:50%;
+border:2px solid #2563EB;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+box-shadow:0 0 12px #2563EB44;
+}
+
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+}
+
+.contact-card{
+background:#111827;
+padding:25px;
+border-radius:14px;
+text-align:center;
+border:1px solid #1F2937;
+}
+
+/* QUOTE */
+
+.quote{
+text-align:center;
+font-size:22px;
+font-style:italic;
+max-width:700px;
+margin:auto;
+color:#CBD5F5;
+padding-top:40px;
+}
+
+/* GLASS ABOUT MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+align-items:center;
+justify-content:center;
+z-index:200;
+}
+
+.modal-content{
+
+background:rgba(17,24,39,0.65);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.08);
+
+padding:40px;
+max-width:700px;
+border-radius:14px;
+line-height:1.6;
+position:relative;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+
+}
+
+.close{
+position:absolute;
+top:12px;
+right:18px;
+font-size:22px;
+cursor:pointer;
+color:#E5E7EB;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+nav{flex-wrap:wrap;gap:12px;font-size:14px;}
+
+.hero h1{font-size:28px;}
+
+.grid{grid-template-columns:1fr;}
+
+.contact-grid{grid-template-columns:1fr;}
+
+}
+
+/* CANVAS BACKGROUND */
+
+#network{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+#neuralButton{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#2563EB;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+font-size:14px;
+cursor:pointer;
+box-shadow:0 0 10px rgba(37,99,235,0.6);
+z-index:999;
+}
+ #neuralModal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.55);
+z-index:2000;
+}
+
+#neuralBox{
+width:min(520px,90%);
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:18px;
+padding:26px;
+color:#E5E7EB;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+#neuralHeader{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:18px;
+font-size:18px;
+font-weight:600;
+}
+
+#closeNeural{
+cursor:pointer;
+font-size:20px;
+opacity:.7;
+}
+
+.neuralMenu{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:18px;
+}
+
+.neuralItem{
+background:#1E293B;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
+text-align:center;
+font-size:14px;
+}
+
+.neuralItem:hover{
+background:#2563EB;
+}
+
+#neuralContent{
+font-size:14px;
+line-height:1.6;
+opacity:.9;
+}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Mahdi Zahmatkesh",
+ "url": "https://mehdi-zahmatkesh.github.io",
+ "jobTitle": "Independent Neuroscience Researcher",
+ "sameAs": [
+   "https://scholar.google.com/citations?user=rddr8HoAAAAJ",
+   "https://orcid.org/0009-0000-1734-0237",
+   "https://zenodo.org/records/18938677",
+   "https://www.linkedin.com/in/mehdi-zahmetke%C5%9F-159a5136b"
+ ]
+}
+</script>
+</head>
+
+<body>
+
+<canvas id="network"></canvas>
+
+<nav>
+<a href="#projects">Projects</a>
+<a href="#books">Books</a>
+<a href="#publication">Publication</a>
+<a href="#programs">Programs</a>
+<a href="#profiles">Profiles</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+
+<div class="logo-box">MZ</div>
+
+<h1>Mehdi Zahmatkesh</h1>
+
+<h3>Independent Neuroscience Researcher</h3>
+
+<button class="btn" onclick="openAbout()">About Mehdi Zahmatkesh</button>
+
+</section>
+
+<!-- ABOUT MODAL -->
+
+<div class="modal" id="aboutModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeAbout()">×</span>
+
+<p>From an early age, I have been deeply curious about the human mind and the mechanisms behind behavior and emotion.</p>
+
+<p>My encounters with anxiety and panic attacks motivated me to study emotional regulation and neural mechanisms behind behavioral change.</p>
+
+<p>My research focuses on narrative identity, addiction recovery and identity-related neural pathways.</p>
+
+</div>
+
+</div>
+
+<section>
+
+<h2 class="title">Research Philosophy</h2>
+
+<p style="text-align:center;max-width:800px;margin:auto;">
+My research explores how narrative identity, cognitive processes and neural mechanisms interact to shape human behavior and reconstruct identity-related neural pathways.
+</p>
+
+</section>
+
+<section id="projects">
+
+<h2 class="title">Research Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>NeuroHarmonia</h3>
+<p>A personalized neuro-audio system designed to reshape identity and behavioral circuits.</p>
+<div class="tags">Neuroscience • Behavioral Change</div>
+</div>
+
+<div class="card">
+<h3>Narrative Identity Rewiring</h3>
+<p>A psychological framework exploring how internal narratives transform behavior.</p>
+<div class="tags">Narrative Therapy • Cognitive Psychology</div>
+</div>
+
+<div class="card">
+<h3>Narrative Therapy Research</h3>
+<p>Exploring narrative-based approaches and their interaction with neural processes.</p>
+<div class="tags">Narrative Therapy • Neuroscience</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="books">
+
+<h2 class="title">Books</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>The Code of a Smoke-Free Life</h3>
+<p>A neuroscience-informed exploration of addiction and identity transformation.</p>
+</div>
+
+<div class="card">
+<h3>The Code of a Panic-Free Life</h3>
+<p>A psychological guide exploring panic attacks and emotional regulation.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="publication">
+
+<h2 class="title">Publication</h2>
+
+<div class="card" style="text-align:center">
+
+<h3>Neural Narrative Reprocessing (NNR)</h3>
+
+<p>A conceptual psychological framework exploring narrative-based emotional regulation and identity restructuring.</p>
+
+<a class="btn" href="https://zenodo.org/records/18938677" target="_blank">Read Publication</a>
+
+</div>
+
+</section>
+
+<section id="programs">
+
+<h2 class="title">Programs</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Smoke-Free Transformation</h3>
+<p>Program focused on smoking cessation and identity rebuilding.</p>
+<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+</div>
+
+<div class="card">
+<h3>Panic & Anxiety Recovery</h3>
+<p>Psychological approach for understanding and managing panic attacks.</p>
+<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+</div>
+
+<div class="card">
+<h3>Identity Rewiring</h3>
+<p>Narrative-based framework for reshaping identity patterns.</p>
+<a href="mailto:mehdi.innerchange@gmail.com">Request Program</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="profiles">
+
+<h2 class="title">Academic Profiles</h2>
+
+<div class="profile-grid">
+
+<a href="https://scholar.google.com/citations?user=rddr8HoAAAAJ" target="_blank">
+<div class="circle">GS</div>
+</a>
+
+<a href="https://orcid.org/0009-0000-1734-0237" target="_blank">
+<div class="circle">ID</div>
+</a>
+
+<a href="https://zenodo.org/records/18938677" target="_blank">
+<div class="circle">Z</div>
+</a>
+
+</div>
+
+</section>
+<section id="mindbrain">
+<h2 class="title">Mind & Brain</h2>
+
+<div style="max-width:900px;margin:auto;display:grid;gap:30px">
+
+  <!-- Panic Article -->
+  <div style="background:rgba(255,255,255,0.03);padding:30px;border-radius:14px;line-height:1.7">
+    <h3>What Happens in the Brain During a Panic Attack</h3>
+
+    <p>
+    A panic attack is not a medical emergency, nor does it mean that the body is failing. In most cases, it reflects a temporary misinterpretation of internal signals by the brain’s threat detection system.
+    </p>
+
+    <p>
+    The human brain constantly evaluates both the external environment and internal bodily sensations in order to detect potential danger. This process involves several neural structures, particularly the amygdala, a region of the brain that plays a central role in processing fear and threat-related signals.
+    </p>
+
+    <p>
+    When the brain interprets a situation as dangerous, it activates the autonomic nervous system, especially its sympathetic branch. This activation triggers what is commonly known as the fight-or-flight response. Heart rate increases, muscles tense, and attention becomes highly focused on bodily sensations.
+    </p>
+
+    <p>
+    In a panic attack, this protective system becomes temporarily overactive. The brain may misinterpret normal bodily sensations such as changes in heartbeat or dizziness as signs of imminent danger.
+    </p>
+
+    <p>
+    Another important factor involves interoception, the brain’s ability to perceive internal bodily sensations. When attention becomes highly focused on these sensations, anxiety may increase and create a feedback loop.
+    </p>
+
+    <p>
+    Although these experiences can feel overwhelming, they are not physically dangerous. They represent the body’s natural alarm system functioning in an exaggerated way.
+    </p>
+
+    <p>
+    Understanding the mechanisms behind panic attacks often reduces the fear associated with them. When the brain learns that these sensations are not dangerous, the panic cycle gradually weakens.
+    </p>
+  </div>
+
+
+  <!-- Smoking Article -->
+  <div style="background:rgba(255,255,255,0.03);padding:30px;border-radius:14px;line-height:1.7">
+    <h3>Why Smoking Addiction Is So Hard to Break</h3>
+
+    <p>
+    Smoking addiction is often described as a chemical dependency, but neuroscience and behavioral psychology suggest that addiction is also deeply connected to patterns of identity and learned behavior.
+    </p>
+
+    <p>
+    Over time, repeated actions create stable neural pathways in the brain. Each time a person smokes in response to stress or habit, the brain strengthens the association between the situation and the behavior.
+    </p>
+
+    <p>
+    This process forms what psychologists call a habit loop. A habit loop typically involves a trigger, a behavior, and a perceived reward.
+    </p>
+
+    <p>
+    However addiction is not only about habits; it is also about self-perception. When a behavior is repeated for a long time, the mind may gradually integrate it into identity.
+    </p>
+
+    <p>
+    Instead of simply smoking cigarettes, a person may begin to believe “I am a smoker.”
+    </p>
+
+    <p>
+    Breaking addiction therefore often requires identity reconstruction. When a person repeatedly interrupts the urge to smoke, the old neural pathway gradually weakens.
+    </p>
+
+    <p>
+    Through neuroplasticity, new behavioral patterns can develop while the brain slowly reorganizes its circuits.
+    </p>
+  </div>
+
+
+  <!-- Stress Article -->
+  <div style="background:rgba(255,255,255,0.03);padding:30px;border-radius:14px;line-height:1.7">
+    <h3>How the Nervous System Responds to Stress</h3>
+
+    <p>
+    Stress is a biological response that prepares the body to deal with challenges and uncertainty.
+    </p>
+
+    <p>
+    When the brain detects pressure or potential threat, the autonomic nervous system becomes active and prepares the body for action.
+    </p>
+
+    <p>
+    The sympathetic branch increases alertness and mobilizes energy, while the parasympathetic branch supports recovery and restoration.
+    </p>
+
+    <p>
+    In healthy conditions these systems continuously regulate each other, allowing the body to shift between activation and recovery.
+    </p>
+
+    <p>
+    However prolonged psychological pressure can keep the nervous system in a persistent state of activation, which may lead to fatigue and mental tension.
+    </p>
+
+    <p>
+    Learning to recognize stress responses and developing strategies to regulate them can help restore balance in the nervous system.
+    </p>
+  </div>
+
+</div>
+
+</section>
+</div>
+
+</section>
+<section id="contact">
+
+<h2 class="title">Contact</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>Email</h3>
+<a href="mailto:mehdi.innerchange@gmail.com">Send Email</a>
+</div>
+
+<div class="contact-card">
+<h3>WhatsApp</h3>
+<a href="https://wa.me/905541880911" target="_blank">Message</a>
+</div>
+
+<div class="contact-card">
+<h3>LinkedIn</h3>
+<a href="https://www.linkedin.com/in/mehdi-zahmetke%C5%9F-159a5136b" target="_blank">Profile</a>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="quote">
+“Human identity is not fixed. It is continuously shaped by the stories we tell ourselves and the neural pathways we reinforce.”
+</div>
+
+</section>
+
+<script>
+
+/* ABOUT */
+
+function openAbout(){
+document.getElementById("aboutModal").style.display="flex";
+}
+
+function closeAbout(){
+document.getElementById("aboutModal").style.display="none";
+}
+
+window.onclick=function(e){
+if(e.target.className==="modal"){
+e.target.style.display="none";
+}
+}
+
+/* NEURAL BACKGROUND */
+
+const canvas=document.getElementById("network");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<70;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:Math.random()*0.5,
+vy:Math.random()*0.5
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+p.x+=p.vx;
+p.y+=p.vy;
+
+if(p.x>canvas.width||p.x<0)p.vx*=-1;
+if(p.y>canvas.height||p.y<0)p.vy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="#2563EB";
+ctx.fill();
+});
+
+for(let i=0;i<particles.length;i++){
+for(let j=i;j<particles.length;j++){
+
+let dx=particles[i].x-particles[j].x;
+let dy=particles[i].y-particles[j].y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+
+ctx.beginPath();
+ctx.moveTo(particles[i].x,particles[i].y);
+ctx.lineTo(particles[j].x,particles[j].y);
+ctx.strokeStyle="#2563EB22";
+ctx.stroke();
+
+}
+
+}
+
+}
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
+<div id="neuralButton">🧠 Neural Reset</div>
+<div id="neuralModal">
+
+<div id="neuralBox">
+
+<div id="neuralHeader">
+<span>Neural Reset</span>
+<span id="closeNeural">✕</span>
+</div>
+
+<div class="neuralMenu">
+
+<div class="neuralItem" onclick="showNeural('panic')">Panic</div>
+
+<div class="neuralItem" onclick="showNeural('cigarette')">Cigarette</div>
+
+<div class="neuralItem" onclick="showNeural('stress')">Stress</div>
+
+<div class="neuralItem" onclick="showNeural('calm')">Calm</div>
+
+</div>
+
+<div id="neuralContent">
+Choose a mode
+</div>
+
+</div>
+
+</div>
+ <script>
+
+const button = document.getElementById("neuralButton");
+const modal = document.getElementById("neuralModal");
+const closeBtn = document.getElementById("closeNeural");
+const content = document.getElementById("neuralContent");
+
+button.onclick = () => {
+modal.style.display = "flex";
+};
+
+closeBtn.onclick = () => {
+modal.style.display = "none";
+};
+
+function showNeural(mode){
+
+if(mode === "panic"){
+content.innerHTML =
+"<b>You are not in danger.</b><br><br>Your brain has triggered a false alarm.<br><br>Breathing exercise:<br>Inhale 4 sec<br>Hold 2 sec<br>Exhale 6 sec.";
+}
+
+if(mode === "cigarette"){
+content.innerHTML =
+"Your brain is trying to follow an old habit loop.<br><br>Do not act on the urge.<br><br>Every minute you delay weakens the old pathway.";
+}
+
+if(mode === "stress"){
+content.innerHTML =
+"Relax your shoulders.<br><br>Slow your breathing.<br><br>Name five things you see around you.";
+}
+
+if(mode === "calm"){
+content.innerHTML =
+"Close your eyes for a moment.<br><br>Focus on slow breathing and let your nervous system settle.";
+}
+
+}
+
+</script>
+</body>
+</html>
